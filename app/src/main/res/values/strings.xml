@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">GokulrajVinny_COMP304Lab2</string>
+    <string name="leaserent">Lease or Rent Home</string>
+    <string name="startbutton">Start</string>
+    <string name="apartment">Apartment</string>
+    <string name="detached_home">Detached Home</string>
+    <string name="semi_detached_home">Semi-Detached Home</string>
+    <string name="condominium_apartment">Condominium Apartment</string>
+    <string name="town_house">Town House</string>
+    <string name="home_image">Home Description</string>
+    <string name="select_homes_button_text">Select Home</string>
+    <string name="house_image_for_reference">House Image for Reference</string>
+    <string name="video_for_entertainment">Video for Entertainment</string>
+    <string name="team_prompt">Select Team</string>
+    <string name="food_prompt">Select Favorite food</string>
+    <string name="checkBox1_text">Virtual Visit</string>
+    <string name="checkBox2_text">Physical Visit</string>
+
+    <string-array name="teams_array">
+        <item>Arsenal</item>
+        <item>Barcelona</item>
+        <item>Borussia Dortmund</item>
+        <item>Chelsea</item>
+        <item>Liverpool</item>
+        <item>Manchester City</item>
+        <item>Manchester United</item>
+        <item>Real Madrid</item>
+        <item>Tottenham Hotspur</item>
+    </string-array>
+    <string-array name="foods_array">
+        <item>Pizza</item>
+        <item>Burgers</item>
+        <item>Pasta</item>
+        <item>Tacos</item>
+        <item>Sushi</item>
+    </string-array>
+
+    <string name="apartment_address1">88 Lawrence Avenue</string>
+    <string name="apartment_address2">468 Shepperd East</string>
+    <string name="apartment_address3">222 Queens Road</string>
+
+    <string name="home_address1">123 Main Street</string>
+    <string name="home_address2">44 Kingston Street</string>
+    <string name="home_address3">199 Lyons Road</string>
+
+    <string name="semi_address1">24 Captain Street</string>
+    <string name="semi_address2">77 Kings Street</string>
+    <string name="semi_address3">111 Avenida Road</string>
+
+    <string name="condo_address1">88 Kingston Road</string>
+    <string name="condo_address2">555 Main Street</string>
+    <string name="condo_address3">12 Eglinton Avenue</string>
+
+    <string name="townhouse_address1">99 Lyon Heights Road</string>
+    <string name="townhouse_address2">44 Park Crest Drive</string>
+    <string name="townhouse_address3">61 Stanbridge Court</string>
+
+    <string name="apartment_price1">$ 50000</string>
+    <string name="apartment_price2">$75000</string>
+    <string name="apartment_price3">$ 100000</string>
+
+    <string name="home_price1">$ 150000</string>
+    <string name="home_price2">$ 200000</string>
+    <string name="home_price3">$ 250000</string>
+
+    <string name="semi_price1">$ 125000</string>
+    <string name="semi_price2">$ 175000</string>
+    <string name="semi_price3">$ 225000</string>
+
+    <string name="condo_price1">$ 800000</string>
+    <string name="condo_price2">$ 1200000</string>
+    <string name="condo_price3">$ 1500000</string>
+
+    <string name="townhouse_price1">$ 800000</string>
+    <string name="townhouse_price2">$ 1750000</string>
+    <string name="townhouse_price3">$ 1000000</string>
+
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+            <item
+                android:id="@+id/apartment"
+                android:icon="@drawable/apartment"
+                android:title="@string/apartment"
+                app:showAsAction="collapseActionView"/>
+            <item
+                android:id="@+id/detached_home"
+                android:icon="@drawable/homeicon"
+                android:title="@string/detached_home" />
+            <item
+                android:id="@+id/semi_detached_home"
+                android:icon="@drawable/semihouse"
+                android:title="@string/semi_detached_home" />
+            <item
+                android:id="@+id/condominium_apartment"
+                android:icon="@drawable/condo"
+                android:title="@string/condominium_apartment" />
+            <item
+                android:id="@+id/town_house"
+                android:icon="@drawable/townhouse"
+                android:title="@string/town_house" />
+    </menu>
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/payment_options_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Payment Option:"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:src="@drawable/card_image"
+        android:layout_below="@id/payment_options_text"
+        android:id="@+id/payment_image"/>
+
+    <RadioGroup
+        android:id="@+id/payment_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/payment_image"
+        android:layout_marginTop="8dp">
+
+        <RadioButton
+            android:id="@+id/cash_radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cash"/>
+
+        <RadioButton
+            android:id="@+id/credit_card_radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Credit Card"/>
+
+        <RadioButton
+            android:id="@+id/debit_card_radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Debit Card"/>
+
+    </RadioGroup>
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="Submit" />
+    </LinearLayout>
+</RelativeLayout>

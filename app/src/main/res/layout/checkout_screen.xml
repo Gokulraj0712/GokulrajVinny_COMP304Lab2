@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/selected_homes_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selected Homes:"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"/>
+
+    <RadioGroup
+        android:id="@+id/homes_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selected_homes_text"
+        android:layout_marginTop="8dp">
+
+        <!-- Example home radio button -->
+        <RadioButton
+            android:id="@+id/home_radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <!-- Add more radio buttons for each selected home -->
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/payment_options_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Payment Option"
+        android:layout_below="@id/homes_radio_group"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+</RelativeLayout>
