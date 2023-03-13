@@ -60,6 +60,7 @@ class PaymentActivity : AppCompatActivity() {
                     Toast.makeText(this, R.string.pay_success, Toast.LENGTH_LONG).show()
                     Thread.sleep(3000)
                     val intent = Intent(this, PaymentSuccessActivity::class.java)
+                    intent.putExtra("Customer_name",nameEditText.text.toString())
                     startActivity(intent)
             } else {
                 Toast.makeText(this, R.string.fill_required_fields, Toast.LENGTH_SHORT).show()

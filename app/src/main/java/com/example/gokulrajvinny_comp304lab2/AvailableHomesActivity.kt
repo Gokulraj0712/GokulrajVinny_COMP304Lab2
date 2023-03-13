@@ -40,15 +40,24 @@ class AvailableHomesActivity : AppCompatActivity() {
 
         val enterButton = findViewById<Button>(R.id.select_homes_button)
         enterButton.setOnClickListener {
-            if ((physicalcheck.isChecked) || (virtualcheck.isChecked)) {
-                selectedHomes = adapter.getSelectedHomes()
-                val intent = Intent(this, CheckoutActivity::class.java)
-                intent.putExtra("selected_homes", ArrayList(selectedHomes))
-                startActivity(intent)
-            } else {
-                Toast.makeText(this, getString(R.string.ErrorHouseVisittype), Toast.LENGTH_SHORT).show()
+            if(adapter.isAtLeastOneCheckBoxChecked())
+            {
+                if (((physicalcheck.isChecked) || (virtualcheck.isChecked))) {
+                    selectedHomes = adapter.getSelectedHomes()
+                    val intent = Intent(this, CheckoutActivity::class.java)
+                    intent.putExtra("selected_homes", ArrayList(selectedHomes))
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, getString(R.string.ErrorHouseVisittype), Toast.LENGTH_SHORT).show()
+
+                }
+            }
+            else
+            {
+                Toast.makeText(this, getString(R.string.Error_no_house), Toast.LENGTH_SHORT).show()
 
             }
+
         }
     }
 

@@ -38,7 +38,7 @@ class CheckoutActivity : AppCompatActivity() {
         selectedHomes?.forEach { home ->
             val radioButton = RadioButton(this)
             radioButton.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20f)
-            radioButton.text = home.address.toString() + " " + home.price.toString()
+            radioButton.text = "Home Address: " + home.address.toString() + "\nPrice: $ " + home.price.toString()
             radioButton.setOnClickListener { view ->
                 selectedHome = home.toString()
                 paymentButton.isEnabled = true

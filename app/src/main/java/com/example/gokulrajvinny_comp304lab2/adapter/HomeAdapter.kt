@@ -61,5 +61,10 @@ class HomeAdapter(private var homes: List<AvailableHomesActivity.Home>) :
         notifyDataSetChanged()
     }
 
+    fun isAtLeastOneCheckBoxChecked(): Boolean {
+        return selectedHomes.isNotEmpty()
+    }
+
+
 
 }

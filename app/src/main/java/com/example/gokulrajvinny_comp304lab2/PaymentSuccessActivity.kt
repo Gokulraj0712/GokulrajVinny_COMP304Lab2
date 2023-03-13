@@ -1,5 +1,6 @@
 package com.example.gokulrajvinny_comp304lab2
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -17,5 +18,16 @@ class PaymentSuccessActivity :AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onBackPressed() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Do you want to go back?")
+        builder.setMessage("Going back can cancel the transaction ")
+        builder.setPositiveButton("Yes") { _, _ ->
+            super.onBackPressed()
+        }
+        builder.setNegativeButton("No", null)
+        builder.show()
     }
 }

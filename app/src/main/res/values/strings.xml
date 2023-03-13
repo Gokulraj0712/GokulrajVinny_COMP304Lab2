@@ -92,4 +92,5 @@
     <string name="back_to_home">Back to Home</string>
     <string name="select_house_type_from_above_menu_options">Select House Type from above Menu Options</string>
     <string name="ErrorHouseVisittype">Please select the type of Home visit</string>
+    <string name="Error_no_house">Please select atleast one Home</string>
 </resources>

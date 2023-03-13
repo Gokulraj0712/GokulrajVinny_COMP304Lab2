@@ -16,6 +16,7 @@ class PaymentOptionsActivity: AppCompatActivity() {
         val creditCardRadioButton = findViewById<RadioButton>(R.id.credit_card_radio_button)
         val debitCardRadioButton = findViewById<RadioButton>(R.id.debit_card_radio_button)
         val submitButton = findViewById<Button>(R.id.submit_button)
+        
 
         submitButton.setOnClickListener {
             if(cashRadioButton.isChecked || creditCardRadioButton.isChecked || debitCardRadioButton.isChecked)
