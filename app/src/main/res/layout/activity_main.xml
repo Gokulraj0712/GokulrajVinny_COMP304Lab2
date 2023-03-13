@@ -17,7 +17,7 @@
         android:layout_width="380dp"
         android:layout_height="200dp"
         android:layout_marginBottom="0dp"
-        android:src="@drawable/home" />
+        android:src="@drawable/gvhome1" />
 
     <TextView
         android:layout_width="wrap_content"
