@@ -2,9 +2,13 @@ package com.example.gokulrajvinny_comp304lab2
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import okhttp3.internal.wait
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
 class PaymentActivity : AppCompatActivity() {
 
@@ -53,22 +57,45 @@ class PaymentActivity : AppCompatActivity() {
         payButton.setOnClickListener {
             if (isValidInput()) {
 
-                    Toast.makeText(this, "Payment Success", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, R.string.pay_success, Toast.LENGTH_LONG).show()
                     Thread.sleep(3000)
-                    val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, PaymentSuccessActivity::class.java)
                     startActivity(intent)
             } else {
-                Toast.makeText(this, "Please fill in all required fields", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.fill_required_fields, Toast.LENGTH_SHORT).show()
             }
         }
     }
 
     // Validate user input
     private fun isValidInput(): Boolean {
-        return nameEditText.text.isNotBlank() &&
-                cardEditText.text.isNotBlank() &&
-                securityCodeEditText.text.isNotBlank() &&
-                expDateEditText.text.isNotBlank() &&
-                sportRadioGroup.checkedRadioButtonId != -1
+        val name = nameEditText.text.toString()
+        val cardNumber = cardEditText.text.toString()
+        val securityCode = securityCodeEditText.text.toString()
+        val expDate = expDateEditText.text.toString()
+
+        if (TextUtils.isEmpty(name) || !name.matches("[a-zA-Z]+".toRegex())) {
+            nameEditText.error = getString(R.string.valid_name)
+            return false
+        }
+
+        if (TextUtils.isEmpty(cardNumber) || !cardNumber.matches("\\d+".toRegex()) || cardNumber.length < 16) {
+            cardEditText.error = getString(R.string.valid_card)
+            return false
+        }
+
+        if (TextUtils.isEmpty(securityCode) || !securityCode.matches("\\d+".toRegex()) || securityCode.length!=3) {
+            securityCodeEditText.error = getString(R.string.valid_cvv)
+            return false
+        }
+
+        try {
+            SimpleDateFormat("MM/yy", Locale.US).parse(expDate)
+        } catch (e: ParseException) {
+            expDateEditText.error = getString(R.string.valid_date)
+            return false
+        }
+
+        return sportRadioGroup.checkedRadioButtonId != -1
     }
 }

@@ -55,24 +55,41 @@
     <string name="townhouse_address2">44 Park Crest Drive</string>
     <string name="townhouse_address3">61 Stanbridge Court</string>
 
-    <string name="apartment_price1">$ 50000</string>
-    <string name="apartment_price2">$75000</string>
-    <string name="apartment_price3">$ 100000</string>
+    <string name="apartment_price1">50000</string>
+    <string name="apartment_price2">75000</string>
+    <string name="apartment_price3">100000</string>
 
-    <string name="home_price1">$ 150000</string>
-    <string name="home_price2">$ 200000</string>
-    <string name="home_price3">$ 250000</string>
+    <string name="home_price1">150000</string>
+    <string name="home_price2">200000</string>
+    <string name="home_price3">250000</string>
 
-    <string name="semi_price1">$ 125000</string>
-    <string name="semi_price2">$ 175000</string>
-    <string name="semi_price3">$ 225000</string>
+    <string name="semi_price1">125000</string>
+    <string name="semi_price2">175000</string>
+    <string name="semi_price3">225000</string>
 
-    <string name="condo_price1">$ 800000</string>
-    <string name="condo_price2">$ 1200000</string>
-    <string name="condo_price3">$ 1500000</string>
+    <string name="condo_price1">800000</string>
+    <string name="condo_price2">1200000</string>
+    <string name="condo_price3">1500000</string>
 
-    <string name="townhouse_price1">$ 800000</string>
-    <string name="townhouse_price2">$ 1750000</string>
-    <string name="townhouse_price3">$ 1000000</string>
-
+    <string name="townhouse_price1">800000</string>
+    <string name="townhouse_price2">1750000</string>
+    <string name="townhouse_price3">1000000</string>
+    <string name="selected_homes">Selected Homes:</string>
+    <string name="select_payment_option">Select Payment Option</string>
+    <string name="pay_success">Payment Success</string>
+    <string name="fill_required_fields">Please fill in all required fields</string>
+    <string name="valid_name">Please enter a valid name</string>
+    <string name="valid_card">Please enter a valid card number</string>
+    <string name="valid_cvv">Please enter a valid security code</string>
+    <string name="valid_date">Please enter a valid expiry date (MM/YY)</string>
+    <string name="select_payment_options">Select Payment Option:</string>
+    <string name="selecthome">Please select a home</string>
+    <string name="cash">Cash</string>
+    <string name="credit_card">Credit Card</string>
+    <string name="debit_card">Debit Card</string>
+    <string name="submit">Submit</string>
+    <string name="payment_successful">Payment successful!</string>
+    <string name="back_to_home">Back to Home</string>
+    <string name="select_house_type_from_above_menu_options">Select House Type from above Menu Options</string>
+    <string name="ErrorHouseVisittype">Please select the type of Home visit</string>
 </resources>

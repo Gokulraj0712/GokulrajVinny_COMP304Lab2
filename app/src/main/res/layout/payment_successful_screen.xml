@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:cropToPadding="true"
+        android:src="@drawable/tick"
+        android:layout_marginTop="200dp"
+        android:id="@+id/tickimage">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/payment_successful_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/payment_successful"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/back_to_home_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/back_to_home"
+        android:textSize="20dp"
+        android:layout_below="@id/payment_successful_text"
+        android:layout_centerHorizontal="true"/>
+
+</LinearLayout>

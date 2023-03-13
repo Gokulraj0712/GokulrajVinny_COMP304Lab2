@@ -1,5 +1,6 @@
 package com.example.gokulrajvinny_comp304lab2
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,5 +16,18 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AvailableHomesActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onBackPressed() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Exit app")
+        builder.setMessage("Do you want to exit?")
+        builder.setPositiveButton("Yes") { _, _ -> finishAffinity() }
+        builder.setNegativeButton("No", null)
+        builder.show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 }

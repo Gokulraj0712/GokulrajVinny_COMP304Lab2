@@ -12,8 +12,16 @@
         android:layout_height="wrap_content"
         android:text="Customer Information"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:id="@+id/custinfotext"/>
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="150dp"
+        android:src="@drawable/card_image"
+        android:layout_below="@id/custinfotext"
+        android:id="@+id/payment_image"/>
     <EditText
         android:id="@+id/nameEditText"
         android:layout_width="match_parent"

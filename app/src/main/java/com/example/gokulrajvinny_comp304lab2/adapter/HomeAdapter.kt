@@ -15,7 +15,9 @@ class HomeAdapter(private var homes: List<AvailableHomesActivity.Home>) :
 
      private val selectedHomes = mutableListOf<AvailableHomesActivity.Home>()
     fun getSelectedHomes(): List<AvailableHomesActivity.Home> {
-        return homes.filter { selectedHomes.contains(it) }
+        return homes.filter { selectedHomes.contains(it)
+
+        }
     }
    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val addressTextView: TextView = itemView.findViewById(R.id.home_address)
@@ -25,7 +27,7 @@ class HomeAdapter(private var homes: List<AvailableHomesActivity.Home>) :
 
         fun bind(home: AvailableHomesActivity.Home) {
             addressTextView.text = home.address
-            priceTextView.text = "$${home.price}"
+            priceTextView.text = "$ ${home.price}"
             imageView.setImageResource(home.imageResourceId)
 
             checkBox.setOnCheckedChangeListener(null)

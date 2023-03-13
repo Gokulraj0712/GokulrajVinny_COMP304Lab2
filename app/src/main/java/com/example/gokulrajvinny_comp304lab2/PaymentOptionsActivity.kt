@@ -18,14 +18,21 @@ class PaymentOptionsActivity: AppCompatActivity() {
         val submitButton = findViewById<Button>(R.id.submit_button)
 
         submitButton.setOnClickListener {
-            if (cashRadioButton.isChecked) {
-                Toast.makeText(this, "Payment success!", Toast.LENGTH_LONG).show()
-                val intent = Intent(this, MainActivity::class.java)
-                Thread.sleep(3000)
-                startActivity(intent)
-            } else if (creditCardRadioButton.isChecked || debitCardRadioButton.isChecked) {
-                val intent = Intent(this, PaymentActivity::class.java)
-                startActivity(intent)
+            if(cashRadioButton.isChecked || creditCardRadioButton.isChecked || debitCardRadioButton.isChecked)
+            {
+                if (cashRadioButton.isChecked) {
+                    Toast.makeText(this, getString(R.string.pay_success), Toast.LENGTH_LONG).show()
+                    val intent = Intent(this, PaymentSuccessActivity::class.java)
+                    Thread.sleep(3000)
+                    startActivity(intent)
+                } else if (creditCardRadioButton.isChecked || debitCardRadioButton.isChecked) {
+                    val intent = Intent(this, PaymentActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+            else
+            {
+                Toast.makeText(this,"Select Any Payment Method", Toast.LENGTH_SHORT).show()
             }
         }
     }

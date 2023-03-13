@@ -15,6 +15,16 @@
         app:titleTextColor="@color/white"
         tools:ignore="MissingConstraints" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/houseoptionhint"
+        android:layout_height="match_parent"
+        android:text="@string/select_house_type_from_above_menu_options"
+        android:gravity="center"
+        android:textSize="50dp"
+        android:textColor="@color/black"
+        tools:ignore="MissingConstraints" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/homeRecyclerView"
         android:layout_width="match_parent"
@@ -36,8 +46,8 @@
         app:layout_constraintTop_toBottomOf="@+id/homeRecyclerView"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="16dp"
-        android:enabled="false"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:visibility="gone"/>
 
     <CheckBox
         android:id="@+id/checkBox2"
@@ -47,8 +57,8 @@
         app:layout_constraintTop_toBottomOf="@+id/homeRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="16dp"
-        android:enabled="false"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/select_homes_button"
@@ -63,8 +73,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"
-        android:enabled="false"
-
+        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@+id/checkBox1"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

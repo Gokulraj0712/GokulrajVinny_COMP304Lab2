@@ -14,15 +14,15 @@
         android:id="@+id/payment_options_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select Payment Option:"
+        android:text="@string/select_payment_options"
         android:textSize="20sp"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"/>
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:src="@drawable/card_image"
+        android:layout_height="250dp"
+        android:src="@drawable/paymentmethod"
         android:layout_below="@id/payment_options_text"
         android:id="@+id/payment_image"/>
 
@@ -37,19 +37,19 @@
             android:id="@+id/cash_radio_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cash"/>
+            android:text="@string/cash"/>
 
         <RadioButton
             android:id="@+id/credit_card_radio_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Credit Card"/>
+            android:text="@string/credit_card"/>
 
         <RadioButton
             android:id="@+id/debit_card_radio_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Debit Card"/>
+            android:text="@string/debit_card"/>
 
     </RadioGroup>
 
@@ -60,6 +60,6 @@
             android:layout_marginTop="16dp"
             android:gravity="center"
             android:layout_gravity="center"
-            android:text="Submit" />
+            android:text="@string/submit" />
     </LinearLayout>
 </RelativeLayout>

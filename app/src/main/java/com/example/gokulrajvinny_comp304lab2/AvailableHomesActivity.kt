@@ -4,11 +4,15 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Button
 import android.widget.CheckBox
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.gokulrajvinny_comp304lab2.adapter.HomeAdapter
 import java.io.Serializable
 
@@ -16,6 +20,8 @@ class AvailableHomesActivity : AppCompatActivity() {
     private var homes: List<Home> = emptyList()
     private lateinit var adapter: HomeAdapter
     private var selectedHomes: List<Home> = emptyList()
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,14 +34,22 @@ class AvailableHomesActivity : AppCompatActivity() {
         homeRecyclerView.layoutManager = layoutManager
         homeRecyclerView.adapter = adapter
 
+        var virtualcheck= findViewById<CheckBox>(R.id.checkBox1)
+        var physicalcheck =findViewById<CheckBox>(R.id.checkBox2)
+
+
         val enterButton = findViewById<Button>(R.id.select_homes_button)
         enterButton.setOnClickListener {
-            selectedHomes = adapter.getSelectedHomes()
-            val intent = Intent(this, CheckoutActivity::class.java)
-            intent.putExtra("selected_homes", ArrayList(selectedHomes))
-            startActivity(intent)
-        }
+            if ((physicalcheck.isChecked) || (virtualcheck.isChecked)) {
+                selectedHomes = adapter.getSelectedHomes()
+                val intent = Intent(this, CheckoutActivity::class.java)
+                intent.putExtra("selected_homes", ArrayList(selectedHomes))
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, getString(R.string.ErrorHouseVisittype), Toast.LENGTH_SHORT).show()
 
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -44,13 +58,12 @@ class AvailableHomesActivity : AppCompatActivity() {
     }
 
 
-    private fun showAvailableHomes(homeType: String) {
-        val intent = Intent(this, AvailableHomesActivity::class.java)
-        intent.putExtra("home_type", homeType)
-        startActivity(intent)
-    }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        var SelectHomeButton = findViewById<Button>(R.id.select_homes_button)
+        var virtualcheck= findViewById<CheckBox>(R.id.checkBox1)
+        var physicalcheck =findViewById<CheckBox>(R.id.checkBox2)
+        var selecthousehint= findViewById<TextView>(R.id.houseoptionhint)
+        selecthousehint.visibility=View.GONE
         when (item.itemId) {
             R.id.apartment -> {
                 homes = listOf(
@@ -59,9 +72,10 @@ class AvailableHomesActivity : AppCompatActivity() {
                     Home(getString(R.string.apartment_address3), getString(R.string.apartment_price3), R.drawable.apartment),
                     // Add more apartments as needed
                 )
-                findViewById<Button>(R.id.select_homes_button).isEnabled=true
-                findViewById<CheckBox>(R.id.checkBox1).isEnabled=true
-                findViewById<CheckBox>(R.id.checkBox2).isEnabled=true
+                SelectHomeButton.visibility = View.VISIBLE
+                virtualcheck.visibility=View.VISIBLE
+                physicalcheck.visibility = View.VISIBLE
+
                 if (::adapter.isInitialized) {
                     adapter.updateData(homes)
                 }
@@ -74,9 +88,10 @@ class AvailableHomesActivity : AppCompatActivity() {
                     Home(getString(R.string.home_address3), getString(R.string.home_price3), R.drawable.homeicon),
                     // Add more detached homes as needed
                 )
-                findViewById<Button>(R.id.select_homes_button).isEnabled=true
-                findViewById<CheckBox>(R.id.checkBox1).isEnabled=true
-                findViewById<CheckBox>(R.id.checkBox2).isEnabled=true
+                SelectHomeButton.visibility = View.VISIBLE
+                virtualcheck.visibility=View.VISIBLE
+                physicalcheck.visibility = View.VISIBLE
+
                 if (::adapter.isInitialized) {
                     adapter.updateData(homes)
                 }
@@ -89,9 +104,10 @@ class AvailableHomesActivity : AppCompatActivity() {
                     Home(getString(R.string.semi_address3), getString(R.string.semi_price3), R.drawable.semihouse),
                     // Add more semi-detached homes as needed
                 )
-                findViewById<Button>(R.id.select_homes_button).isEnabled=true
-                findViewById<CheckBox>(R.id.checkBox1).isEnabled=true
-                findViewById<CheckBox>(R.id.checkBox2).isEnabled=true
+                SelectHomeButton.visibility = View.VISIBLE
+                virtualcheck.visibility=View.VISIBLE
+                physicalcheck.visibility = View.VISIBLE
+
                 if (::adapter.isInitialized) {
                     adapter.updateData(homes)
                 }
@@ -104,9 +120,10 @@ class AvailableHomesActivity : AppCompatActivity() {
                     Home(getString(R.string.condo_address3), getString(R.string.condo_price3), R.drawable.condo),
                     // Add more condominium apartments as needed
                 )
-                findViewById<Button>(R.id.select_homes_button).isEnabled=true
-                findViewById<CheckBox>(R.id.checkBox1).isEnabled=true
-                findViewById<CheckBox>(R.id.checkBox2).isEnabled=true
+                SelectHomeButton.visibility = View.VISIBLE
+                virtualcheck.visibility=View.VISIBLE
+                physicalcheck.visibility = View.VISIBLE
+
                 if (::adapter.isInitialized) {
                     adapter.updateData(homes)
                 }
@@ -120,9 +137,10 @@ class AvailableHomesActivity : AppCompatActivity() {
                     Home(getString(R.string.townhouse_address3), getString(R.string.townhouse_price3), R.drawable.townhouse),
                     // Add more townhouse apartments as needed
                 )
-                findViewById<Button>(R.id.select_homes_button).isEnabled=true
-                findViewById<CheckBox>(R.id.checkBox1).isEnabled=true
-                findViewById<CheckBox>(R.id.checkBox2).isEnabled=true
+                SelectHomeButton.visibility = View.VISIBLE
+                virtualcheck.visibility=View.VISIBLE
+                physicalcheck.visibility = View.VISIBLE
+
                 if (::adapter.isInitialized) {
                     adapter.updateData(homes)
                 }
@@ -136,16 +154,5 @@ class AvailableHomesActivity : AppCompatActivity() {
     data class Home(val address: String, val price: String, val imageResourceId: Int) : java.io.Serializable
 
 
-    override fun onDestroy() {
-        // Get a reference to the current activity
-        val activity = this
 
-        // Finish all activities in the current task
-        activity.finishAffinity()
-
-        // Exit the app
-        System.exit(0)
-        super.onDestroy()
-
-    }
 }

@@ -11,7 +11,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/homeicon" />
+         />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -26,7 +26,6 @@
             android:id="@+id/home_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="123 Main St."
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -35,7 +34,6 @@
             android:id="@+id/home_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="$1,000 / month"
             android:textColor="@color/grey"
             android:textSize="14sp" />
 
