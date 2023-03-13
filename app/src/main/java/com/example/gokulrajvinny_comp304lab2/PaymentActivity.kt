@@ -2,7 +2,9 @@ package com.example.gokulrajvinny_comp304lab2
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
 import android.text.TextUtils
+import android.text.TextWatcher
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import okhttp3.internal.wait
@@ -44,6 +46,7 @@ class PaymentActivity : AppCompatActivity() {
             teamSpinner.adapter = adapter
         }
 
+
         // Set up the autocomplete text view
         ArrayAdapter.createFromResource(
             this,
@@ -75,7 +78,7 @@ class PaymentActivity : AppCompatActivity() {
         val securityCode = securityCodeEditText.text.toString()
         val expDate = expDateEditText.text.toString()
 
-        if (TextUtils.isEmpty(name) || !name.matches("[a-zA-Z]+".toRegex())) {
+        if (TextUtils.isEmpty(name) || !name.matches("[a-zA-Z ]+".toRegex())) {
             nameEditText.error = getString(R.string.valid_name)
             return false
         }
@@ -91,8 +94,20 @@ class PaymentActivity : AppCompatActivity() {
         }
 
         try {
-            SimpleDateFormat("MM/yy", Locale.US).parse(expDate)
-        } catch (e: ParseException) {
+            val sdf = SimpleDateFormat("MM/yy", Locale.US)
+            val date = sdf.parse(expDate)
+            val calendar = Calendar.getInstance()
+            calendar.time = date
+            val month = calendar.get(Calendar.MONTH) + 1 // January is 0
+            val year = Calendar.getInstance().get(Calendar.YEAR)%100
+
+
+            if ( expDateEditText.text.substring(0,2).toInt() > 12 ||
+                    expDateEditText.text.substring(3,5).toInt()< year) {
+                expDateEditText.error = getString(R.string.valid_date)
+                return false
+            }
+        }catch (e: ParseException) {
             expDateEditText.error = getString(R.string.valid_date)
             return false
         }
