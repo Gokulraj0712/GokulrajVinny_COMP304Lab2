@@ -7,6 +7,13 @@ import android.os.PersistableBundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
+/***
+ * Submitted by:
+ *               Gokulraj Venugopal - 301202722
+ *               Vinny Mariam Vinu -  301234317
+ */
+
+
 class PaymentSuccessActivity :AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

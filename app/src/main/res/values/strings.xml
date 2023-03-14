@@ -93,4 +93,16 @@
     <string name="select_house_type_from_above_menu_options">Select House Type from above Menu Options</string>
     <string name="ErrorHouseVisittype">Please select the type of Home visit</string>
     <string name="Error_no_house">Please select atleast one Home</string>
+    <string name="customer_information">Customer Information</string>
+    <string name="name">Name</string>
+    <string name="card_number">Card Number</string>
+    <string name="cvv">CVV</string>
+    <string name="expiry_date_mm_yy">Expiry Date (MM/YY)</string>
+    <string name="favorite_sport">Favorite Sport</string>
+    <string name="basketball">Basketball</string>
+    <string name="football">Football</string>
+    <string name="cricket">Cricket</string>
+    <string name="favorite_team">Favorite Team</string>
+    <string name="favorite_food">Favorite Food</string>
+    <string name="pay">Pay</string>
 </resources>

@@ -16,6 +16,13 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.gokulrajvinny_comp304lab2.adapter.HomeAdapter
 import java.io.Serializable
 
+
+/***
+ * Submitted by:
+ *               Gokulraj Venugopal - 301202722
+ *               Vinny Mariam Vinu -  301234317
+ */
+
 class AvailableHomesActivity : AppCompatActivity() {
     private var homes: List<Home> = emptyList()
     private lateinit var adapter: HomeAdapter

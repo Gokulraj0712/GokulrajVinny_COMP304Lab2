@@ -6,6 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
+/***
+ * Submitted by:
+ *               Gokulraj Venugopal - 301202722
+ *               Vinny Mariam Vinu -  301234317
+ */
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

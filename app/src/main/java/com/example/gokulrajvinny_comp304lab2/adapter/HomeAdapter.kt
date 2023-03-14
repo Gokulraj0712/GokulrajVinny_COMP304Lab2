@@ -10,6 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gokulrajvinny_comp304lab2.AvailableHomesActivity
 import com.example.gokulrajvinny_comp304lab2.R
 
+/***
+ * Submitted by:
+ *               Gokulraj Venugopal - 301202722
+ *               Vinny Mariam Vinu -  301234317
+ */
+
 class HomeAdapter(private var homes: List<AvailableHomesActivity.Home>) :
     RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 

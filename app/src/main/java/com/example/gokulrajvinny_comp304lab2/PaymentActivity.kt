@@ -12,6 +12,12 @@ import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
+/***
+ * Submitted by:
+ *               Gokulraj Venugopal - 301202722
+ *               Vinny Mariam Vinu -  301234317
+ */
+
 class PaymentActivity : AppCompatActivity() {
 
     private lateinit var nameEditText: EditText
@@ -98,7 +104,6 @@ class PaymentActivity : AppCompatActivity() {
             val date = sdf.parse(expDate)
             val calendar = Calendar.getInstance()
             calendar.time = date
-            val month = calendar.get(Calendar.MONTH) + 1 // January is 0
             val year = Calendar.getInstance().get(Calendar.YEAR)%100
 
 

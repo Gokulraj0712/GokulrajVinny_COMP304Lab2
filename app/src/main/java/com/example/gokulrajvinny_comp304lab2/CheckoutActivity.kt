@@ -9,6 +9,12 @@ import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
+/***
+ * Submitted by:
+ *               Gokulraj Venugopal - 301202722
+ *               Vinny Mariam Vinu -  301234317
+ */
+
 class CheckoutActivity : AppCompatActivity() {
 
     private lateinit var homeRadioGroup: RadioGroup
@@ -19,14 +25,6 @@ class CheckoutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.checkout_screen)
-
-            //selectedHomes = intent.getSerializableExtra("selected_homes") as List<AvailableHomesActivity.Home>
-
-        // Get homes from preferences
-        //val preferences = getSharedPreferences("homes", MODE_PRIVATE)
-        //val intent = Intent(this, PaymentOptionsActivity::class.java)
-        //val homes = intent.getStringArrayExtra("selected_homes")
-        //println("Checkout Activty"+homes)
 
         selectedHomes = (intent.getSerializableExtra("selected_homes") as? ArrayList<AvailableHomesActivity.Home>)!!
 
